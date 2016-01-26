@@ -1,7 +1,5 @@
 import datetime
-from itertools import count
 import sys
-
 import time
 
 from TwitterAPI import TwitterAPI
