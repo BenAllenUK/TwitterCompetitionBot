@@ -1,6 +1,6 @@
 # TwitterCompetitionBot
-Automatically enters you into competitions based on searches of keywords. The program runs every 60 seconds,
-this is to avoid the rate limit set by Twitter. The program only retweets tweets. It does not yet follow them.
+Automatically enters you into twitter based competitions. Link to a twitter account and it will retweet any tweets that have a pre-defined set of key words. The program runs every 60 seconds,
+this is to avoid the rate limit set by Twitter. The program only retweets tweets, it does not yet follow them.
 
 
 ## Requirements
