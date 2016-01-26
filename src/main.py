@@ -1,3 +1,4 @@
+import datetime
 from itertools import count
 import sys
 
@@ -82,8 +83,9 @@ def find_matches_given_tweets(r):
 
 
 def init():
-    global api, consumer_key, consumer_secret, access_token_key, access_token_secret, twitter_details, retweet_count
+    global api, consumer_key, consumer_secret, access_token_key, access_token_secret, twitter_details, retweet_count, start_time
     retweet_count = 0
+    start_time = time.time()
 
 
     # Try read file
@@ -127,7 +129,10 @@ def init():
 
 def run_search(api):
     print()
-    print('Tweets found matching words: ')
+    time_diff = time.time() - start_time
+    current_time = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')
+    difference_time = datetime.datetime.fromtimestamp(time_diff).strftime('%H:%M:%S')
+    print('[ ' + current_time + ' Running Search, total run time of '+ difference_time +']')
     for key_word in KEYWORDS:
         r = api.request('search/tweets', {'q': key_word})
         find_matches_given_tweets(r)
